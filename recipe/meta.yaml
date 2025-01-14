@@ -17,11 +17,11 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - numpy
     - scipy
     - h5py
@@ -32,6 +32,8 @@ requirements:
 test:
   imports:
     - loompy
+  requires:
+    - python {{ python_min }}
 
 about:
   home: https://github.com/linnarsson-lab/loompy
